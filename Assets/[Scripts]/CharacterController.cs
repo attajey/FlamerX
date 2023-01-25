@@ -1,3 +1,13 @@
+/*  Filename:           CharacterController.cs
+ *  Author(s):             Atta Jirofty
+ *  Last Update:        Jan 25, 2023
+ *  Description:        Player controller to move, attack, pause, and resume
+ *  Revision History:   Jan 24, 2023 (Atta Jirofty): Initial script.
+ *                      Jan 25, 2023 (Atta Jirofty): Added player movement.
+ */
+
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,7 +24,13 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundCheckRadius;
     [SerializeField] private LayerMask groundLayer;
-    private bool isGrounded;
+    [SerializeField] private bool isGrounded;
+
+    [Header("Attack")]
+    [SerializeField] private Transform attackPoint;
+    [SerializeField] private LayerMask enemyLayers;
+    [SerializeField] private float attackRange = 0.5f;
+    [SerializeField] private int attackDamage = 40;
 
     [Header("Auto get component")]
     [SerializeField] private Animator anim;
@@ -34,44 +50,67 @@ public class CharacterController : MonoBehaviour
         // attacking
         if (Input.GetKeyDown(KeyCode.E))
         {
-            anim.SetTrigger(isAttacking);
+            Attack();
         }
     }
 
+
     private void FixedUpdate()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        
 
-        // horizontal movement
+        // Horizontal movement
         float horiz = Input.GetAxis("Horizontal");
         rBody.velocity = new Vector2(
-            isPressingRunButton() ? horiz * walkingSpeed * runningMultiplier : horiz * walkingSpeed, rBody.velocity.y);
+            IsPressingRunButton() ? horiz * walkingSpeed * runningMultiplier : horiz * walkingSpeed, rBody.velocity.y);
 
-        // vertical movement
-        if (isPressingJumpButton() && isGrounded)
+        // Vertical movement
+        if (IsPressingJumpButton() && IsGrounded())
         {
             rBody.AddForce(new Vector2(0.0f, jumpForce), ForceMode2D.Impulse);
             anim.SetTrigger("isJumping");
         }
 
-        // flip the character for direction change
-        if ((isFacingRight && rBody.velocity.x < 0) || (!isFacingRight && rBody.velocity.x > 0)) 
-        { 
+        // Flip the character for direction change
+        if ((isFacingRight && rBody.velocity.x < 0) || (!isFacingRight && rBody.velocity.x > 0))
+        {
             Flip();
         }
 
         anim.SetFloat("xVelocity", Mathf.Abs(rBody.velocity.x));
         anim.SetFloat("yVelocity", rBody.velocity.y);
-        anim.SetBool("isGrounded", isGrounded);
+        anim.SetBool("isGrounded", IsGrounded());
     }
 
+    private void Attack()
+    {
+        // Play attack anim
+        anim.SetTrigger(isAttacking);
 
-    private bool isPressingJumpButton()
+        // Detect enemies in range of attack
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+        // Damage enemies in range of attack
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            if (enemy.CompareTag("Enemy")) // To eliminate Confiner from hitEnemies array. Confiner is for Cinemachine ? 
+            {
+                enemy.GetComponent<EnemyController>().TakeDamage(attackDamage);
+            }
+        }
+    }
+
+    private bool IsGrounded()
+    {
+        return Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+    }
+
+    private bool IsPressingJumpButton()
     {
         return Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow);
     }
 
-    private bool isPressingRunButton()
+    private bool IsPressingRunButton()
     {
         return Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
     }
@@ -83,5 +122,15 @@ public class CharacterController : MonoBehaviour
         transform.localScale = temp;
 
         isFacingRight = !isFacingRight;
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (attackPoint == null)
+        {
+            return;
+        }
+
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 }
