@@ -12,4 +12,8 @@ using UnityEngine;
 /// </summary>
 public class Box : MonoBehaviour
 {
+    public void DestroySelf()
+    {
+        Destroy(this.gameObject);
+    }
 }

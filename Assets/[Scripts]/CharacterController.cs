@@ -4,6 +4,7 @@
  *  Description:        Player controller to move, attack, pause, and resume
  *  Revision History:   Jan 24, 2023 (Atta Jirofty): Initial script.
  *                      Jan 25, 2023 (Atta Jirofty): Added player movement.
+ *                      Jan 25, 2023 (Atta Jirofty): Added player attack system.
  */
 
 
@@ -31,13 +32,16 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private LayerMask enemyLayers;
     [SerializeField] private float attackRange = 0.5f;
     [SerializeField] private int attackDamage = 40;
+    [SerializeField] private float attackRate = 2f;
+    private float nextAttackTime = 0f;
 
-    [Header("Auto get component")]
-    [SerializeField] private Animator anim;
-    [SerializeField] private Rigidbody2D rBody;
+    private Animator anim;
+    private Rigidbody2D rBody;
 
     private bool isFacingRight = true;
     private int isAttacking = Animator.StringToHash("isAttacking");
+    private int isJumping = Animator.StringToHash("isJumping");
+    //TODO: Delete all hard coded strings and make them variables
 
     private void Awake()
     {
@@ -48,27 +52,29 @@ public class CharacterController : MonoBehaviour
     private void Update()
     {
         // attacking
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Time.time >= nextAttackTime)
         {
-            Attack();
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Attack();
+                nextAttackTime = Time.time + 1f / attackRate;
+            }
         }
     }
 
-
     private void FixedUpdate()
     {
-        
-
         // Horizontal movement
         float horiz = Input.GetAxis("Horizontal");
         rBody.velocity = new Vector2(
-            IsPressingRunButton() ? horiz * walkingSpeed * runningMultiplier : horiz * walkingSpeed, rBody.velocity.y);
+            IsPressingRunButton() ?
+            horiz * walkingSpeed * runningMultiplier : horiz * walkingSpeed, rBody.velocity.y);
 
         // Vertical movement
         if (IsPressingJumpButton() && IsGrounded())
         {
             rBody.AddForce(new Vector2(0.0f, jumpForce), ForceMode2D.Impulse);
-            anim.SetTrigger("isJumping");
+            anim.SetTrigger(isJumping);
         }
 
         // Flip the character for direction change
@@ -87,15 +93,19 @@ public class CharacterController : MonoBehaviour
         // Play attack anim
         anim.SetTrigger(isAttacking);
 
-        // Detect enemies in range of attack
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+        // Detect enemies or boxes in range of attack
+        Collider2D[] hitEnemiesOrBoxes = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
         // Damage enemies in range of attack
-        foreach (Collider2D enemy in hitEnemies)
+        foreach (Collider2D enemyOrBox in hitEnemiesOrBoxes)
         {
-            if (enemy.CompareTag("Enemy")) // To eliminate Confiner from hitEnemies array. Confiner is for Cinemachine ? 
+            if (enemyOrBox.CompareTag("Enemy")) // To eliminate Confiner from hitEnemies array. Confiner is for Cinemachine ? 
             {
-                enemy.GetComponent<EnemyController>().TakeDamage(attackDamage);
+                enemyOrBox.GetComponent<EnemyController>().TakeDamage(attackDamage);
+            }
+            else if (enemyOrBox.CompareTag("Box"))
+            {
+                enemyOrBox.GetComponent<Box>().DestroySelf();
             }
         }
     }

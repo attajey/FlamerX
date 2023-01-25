@@ -1,3 +1,10 @@
+/*  Filename:           EnemyController.cs
+ *  Author(s):          Atta Jirofty
+ *  Last Update:        Jan 25, 2023
+ *  Description:        Enemy controller for taking damage and AI. 
+ *  Revision History:   Jan 25, 2023 (Atta Jirofty): Initial script.
+ *                      Jan 25, 2023 (Atta Jirofty): Added take damage.
+ */
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -31,12 +38,9 @@ public class EnemyController : MonoBehaviour
     {
         // Play die anim
         anim.SetBool("isDead", true);
-        // Disable the enemy
-        //this.enabled = false;
-        //GetComponent<Collider2D>().enabled = false;
-        Destroy(this.gameObject, 2f);
-        Debug.Log("Died");
 
+        // Disable the enemy
+        Destroy(this.gameObject, 4f);
 
     }
 }
