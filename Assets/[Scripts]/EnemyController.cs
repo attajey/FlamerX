@@ -14,7 +14,7 @@ public class EnemyController : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 100;
     [SerializeField] private float speed;
-    [SerializeField] private float rangeToChase = 5f;
+    //[SerializeField] private float rangeToChase = 5f;
     [SerializeField] private float rangeToAttack = 5f;
     [SerializeField] private Animator anim;
     [SerializeField] private GameObject player;
@@ -74,6 +74,7 @@ public class EnemyController : MonoBehaviour
     private void Attack()
     {
         anim.SetTrigger(isAttacking);
+        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         Collider2D hitPlayer = Physics2D.OverlapCircle(attackPoint.position, attackRange, playerLayer);
         if (hitPlayer != null)
         {
