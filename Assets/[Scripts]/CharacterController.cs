@@ -41,12 +41,18 @@ public class CharacterController : MonoBehaviour
     private bool isFacingRight = true;
     private int isAttacking = Animator.StringToHash("isAttacking");
     private int isJumping = Animator.StringToHash("isJumping");
+
+    [SerializeField] private int maxHealth = 100;
+    private int currentHealth;
+
     //TODO: Delete all hard coded strings and make them variables
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
         rBody = GetComponent<Rigidbody2D>();
+        currentHealth = maxHealth;
+
     }
 
     private void Update()
@@ -109,6 +115,28 @@ public class CharacterController : MonoBehaviour
             }
         }
     }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        // Play hurt anim
+        //anim.SetTrigger("Hurt");
+
+        if (currentHealth <= 0)
+        {
+            Debug.Log("Character is dead!");
+            //Die();
+        }
+    }
+    //void Die()
+    //{
+    //    // Play die anim
+    //    anim.SetBool("isDead", true);
+
+    //    // Disable the enemy
+    //    Destroy(this.gameObject, 2f);
+    //}
 
     private bool IsGrounded()
     {

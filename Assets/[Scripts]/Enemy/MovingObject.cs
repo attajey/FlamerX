@@ -58,7 +58,7 @@ public class MovingObject : MonoBehaviour
         Move();
     }
 
-    private void Move()
+    public void Move()
     {
         // Check if at least one waypoints exist
         if (waypoints != null && waypoints.Points.Count > 0 && waypoints.Points.Count > currentWayPoint)
