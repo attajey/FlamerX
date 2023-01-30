@@ -93,7 +93,9 @@ public class EnemyController : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+
             Die();
+            
         }
     }
 
@@ -101,9 +103,10 @@ public class EnemyController : MonoBehaviour
     {
         // Play die anim
         anim.SetBool("isDead", true);
-
+       
         // Disable the enemy
         Destroy(this.gameObject, 2f);
+        ScoreScript.scoreValue += 100;
     }
     private void OnDrawGizmos()
     {
