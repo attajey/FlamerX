@@ -5,6 +5,7 @@
  *  Revision History:   Jan 24, 2023 (Atta Jirofty): Initial script.
  *                      Jan 25, 2023 (Atta Jirofty): Added player movement.
  *                      Jan 25, 2023 (Atta Jirofty): Added player attack system.
+ *                      Feb 08, 2023 (Atta Jirofty): Added SFX
  */
 
 

@@ -4,6 +4,7 @@
  *  Description:        Enemy controller for taking damage and AI. 
  *  Revision History:   Jan 25, 2023 (Atta Jirofty): Initial script.
  *                      Jan 25, 2023 (Atta Jirofty): Added take damage.
+ *                      Feb 08, 2023 (Atta Jirofty): Added SFX
  */
 using System;
 using System.Collections;
@@ -27,6 +28,10 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float attackRate = 1f;
     private float nextAttackTime = 0f;
 
+    [Header("SFX")]
+    [SerializeField] private AudioClip[] attackSFX;
+    private AudioSource audioSource;
+
     private float distanceToPlayer;
     private int currentHealth;
 
@@ -35,6 +40,8 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
         currentHealth = maxHealth;
     }
 
@@ -74,6 +81,7 @@ public class EnemyController : MonoBehaviour
     private void Attack()
     {
         anim.SetTrigger(isAttacking);
+        PlayAttackSFX();
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         Collider2D hitPlayer = Physics2D.OverlapCircle(attackPoint.position, attackRange, playerLayer);
         if (hitPlayer != null)
@@ -99,6 +107,31 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+
+    void PlayAttackSFX()
+    {
+        switch (this.gameObject.name)
+        {
+            case "Skeleton Model":
+                audioSource.clip = attackSFX[0];
+                break;
+            case "Mushroom Model":
+                audioSource.clip = attackSFX[1];
+                break;
+            case "Goblin Model":
+                audioSource.clip = attackSFX[2];
+                break;
+            case "Flying eye Model":
+                audioSource.clip = attackSFX[3];
+                break;
+            default:
+                Debug.Log("SFX for enemy attack not found");
+                break;
+        }
+        audioSource.Play();
+        //    CallAudio();
+    }
+
     void Die()
     {
         // Play die anim
@@ -108,6 +141,9 @@ public class EnemyController : MonoBehaviour
         Destroy(this.gameObject, 2f);
         ScoreScript.scoreValue += 100;
     }
+
+
+
     private void OnDrawGizmos()
     {
         if (attackPoint == null)

@@ -29999,6 +29999,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1812025432, guid: fe94474a32dee5c49a757da0451ac03f, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -1702155580071409835, guid: 3eb4601f5a8c886489dc0108d69377b9, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe94474a32dee5c49a757da0451ac03f, type: 3}
 --- !u!1001 &1243873195
@@ -32637,10 +32641,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1812025431}
-    - target: {fileID: 6336609791489116644, guid: 702d4e0b412fba047b6062f0ff682682, type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
     - target: {fileID: 7696046710302706281, guid: 702d4e0b412fba047b6062f0ff682682, type: 3}
       propertyPath: m_Name
       value: Mushroom
@@ -32766,10 +32766,6 @@ PrefabInstance:
     - target: {fileID: 7134753491129219249, guid: abbc3b0deb355254a937297c4c2d8f98, type: 3}
       propertyPath: m_Name
       value: Skeleton
-      objectReference: {fileID: 0}
-    - target: {fileID: 7491584773649153679, guid: abbc3b0deb355254a937297c4c2d8f98, type: 3}
-      propertyPath: m_BodyType
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abbc3b0deb355254a937297c4c2d8f98, type: 3}
