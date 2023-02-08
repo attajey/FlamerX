@@ -8678,75 +8678,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 976615006049730695, guid: c8d94b83e15b7a24cb69764950763790, type: 3}
   m_PrefabInstance: {fileID: 1184425544}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1193236383
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3650689356120166371, guid: 312943c3b615cde438965de62f998b81, type: 3}
-      propertyPath: canvas
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3650689356120166371, guid: 312943c3b615cde438965de62f998b81, type: 3}
-      propertyPath: jumpForce
-      value: 900
-      objectReference: {fileID: 0}
-    - target: {fileID: 6069118564524331753, guid: 312943c3b615cde438965de62f998b81, type: 3}
-      propertyPath: m_Name
-      value: Gameboy
-      objectReference: {fileID: 0}
-    - target: {fileID: 6069118564524331753, guid: 312943c3b615cde438965de62f998b81, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6069118564524331759, guid: 312943c3b615cde438965de62f998b81, type: 3}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 6069118564524331759, guid: 312943c3b615cde438965de62f998b81, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -17.42
-      objectReference: {fileID: 0}
-    - target: {fileID: 6069118564524331759, guid: 312943c3b615cde438965de62f998b81, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.651
-      objectReference: {fileID: 0}
-    - target: {fileID: 6069118564524331759, guid: 312943c3b615cde438965de62f998b81, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6069118564524331759, guid: 312943c3b615cde438965de62f998b81, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6069118564524331759, guid: 312943c3b615cde438965de62f998b81, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6069118564524331759, guid: 312943c3b615cde438965de62f998b81, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6069118564524331759, guid: 312943c3b615cde438965de62f998b81, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6069118564524331759, guid: 312943c3b615cde438965de62f998b81, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6069118564524331759, guid: 312943c3b615cde438965de62f998b81, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6069118564524331759, guid: 312943c3b615cde438965de62f998b81, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 312943c3b615cde438965de62f998b81, type: 3}
 --- !u!1 &1206897737
 GameObject:
   m_ObjectHideFlags: 0
@@ -30069,9 +30000,77 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 79118434, guid: fe94474a32dee5c49a757da0451ac03f, type: 3}
+      propertyPath: attackSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 3835ac7ea641e9e4b8ba4afd8fcb2bcb, type: 3}
+    - target: {fileID: 79118434, guid: fe94474a32dee5c49a757da0451ac03f, type: 3}
+      propertyPath: jumpSFX.Array.size
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 79118434, guid: fe94474a32dee5c49a757da0451ac03f, type: 3}
       propertyPath: jumpAudio.Array.size
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 79118434, guid: fe94474a32dee5c49a757da0451ac03f, type: 3}
+      propertyPath: jumpSFX.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1c9899d87d9b0c440a06b815c950b32a, type: 3}
+    - target: {fileID: 79118434, guid: fe94474a32dee5c49a757da0451ac03f, type: 3}
+      propertyPath: jumpSFX.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: ef15c0370e27db04cafcca0550ddeb29, type: 3}
+    - target: {fileID: 79118434, guid: fe94474a32dee5c49a757da0451ac03f, type: 3}
+      propertyPath: jumpSFX.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5bb6b879dabda924eb5ed877e7c25012, type: 3}
+    - target: {fileID: 79118434, guid: fe94474a32dee5c49a757da0451ac03f, type: 3}
+      propertyPath: jumpSFX.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 43d344948330fad49b02d6e5df6f2676, type: 3}
+    - target: {fileID: 79118434, guid: fe94474a32dee5c49a757da0451ac03f, type: 3}
+      propertyPath: jumpSFX.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 27b9db1124dced04b96dd874217d235d, type: 3}
+    - target: {fileID: 79118434, guid: fe94474a32dee5c49a757da0451ac03f, type: 3}
+      propertyPath: jumpSFX.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: c6cf5f9e0e140364094d571c5eb6979d, type: 3}
+    - target: {fileID: 79118434, guid: fe94474a32dee5c49a757da0451ac03f, type: 3}
+      propertyPath: jumpSFX.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: 12a85020135be4f4eb2dcd7b08e0c687, type: 3}
+    - target: {fileID: 79118434, guid: fe94474a32dee5c49a757da0451ac03f, type: 3}
+      propertyPath: jumpSFX.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: 99f340ad65ebff141bdc3a61c4ff5d6c, type: 3}
+    - target: {fileID: 79118434, guid: fe94474a32dee5c49a757da0451ac03f, type: 3}
+      propertyPath: jumpSFX.Array.data[8]
+      value: 
+      objectReference: {fileID: 8300000, guid: 22c54b76983b13240856c8fa38e86fc0, type: 3}
+    - target: {fileID: 79118434, guid: fe94474a32dee5c49a757da0451ac03f, type: 3}
+      propertyPath: jumpSFX.Array.data[9]
+      value: 
+      objectReference: {fileID: 8300000, guid: d5173ecc63ae7a04981ebd159a17255c, type: 3}
+    - target: {fileID: 79118434, guid: fe94474a32dee5c49a757da0451ac03f, type: 3}
+      propertyPath: jumpSFX.Array.data[10]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9b8af646d8daf2f4d8c6017fbb7652b4, type: 3}
+    - target: {fileID: 79118434, guid: fe94474a32dee5c49a757da0451ac03f, type: 3}
+      propertyPath: jumpSFX.Array.data[11]
+      value: 
+      objectReference: {fileID: 8300000, guid: 970bf11c4df69024e9ad47f62aeff4c8, type: 3}
+    - target: {fileID: 79118434, guid: fe94474a32dee5c49a757da0451ac03f, type: 3}
+      propertyPath: jumpSFX.Array.data[12]
+      value: 
+      objectReference: {fileID: 8300000, guid: ddf6e756fdda9184cab548fcca5e115a, type: 3}
+    - target: {fileID: 79118434, guid: fe94474a32dee5c49a757da0451ac03f, type: 3}
+      propertyPath: jumpSFX.Array.data[13]
+      value: 
+      objectReference: {fileID: 8300000, guid: fb7f36e3f9ca289468199fc4a92980e4, type: 3}
+    - target: {fileID: 79118434, guid: fe94474a32dee5c49a757da0451ac03f, type: 3}
+      propertyPath: jumpSFX.Array.data[14]
+      value: 
+      objectReference: {fileID: 8300000, guid: be11d134354c0ce4d9a6535ff801ebdd, type: 3}
     - target: {fileID: 79118434, guid: fe94474a32dee5c49a757da0451ac03f, type: 3}
       propertyPath: jumpAudio.Array.data[0]
       value: 

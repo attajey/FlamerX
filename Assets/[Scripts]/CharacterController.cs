@@ -36,8 +36,9 @@ public class CharacterController : MonoBehaviour
     private float nextAttackTime = 0f;
 
     [Header("SFX")]
-    [SerializeField] private AudioClip[] jumpAudio;
-    private AudioSource randomSound;
+    [SerializeField] private AudioClip[] jumpSFX;
+    [SerializeField] private AudioClip attackSFX;
+    private AudioSource audioSource;
 
     private Animator anim;
     private Rigidbody2D rBody;
@@ -55,7 +56,7 @@ public class CharacterController : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rBody = GetComponent<Rigidbody2D>();
-        randomSound = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
         
         currentHealth = maxHealth;
 
@@ -88,7 +89,7 @@ public class CharacterController : MonoBehaviour
         if (IsPressingJumpButton() && IsGrounded())
         {
             rBody.AddForce(new Vector2(0.0f, jumpForce), ForceMode2D.Impulse);
-            RandomJumpSFX();
+            PlayRandomJumpSFX();
             anim.SetTrigger(isJumping);
         }
 
@@ -107,6 +108,7 @@ public class CharacterController : MonoBehaviour
     {
         // Play attack anim
         anim.SetTrigger(isAttacking);
+        PlayAttackSound();
 
         // Detect enemies or boxes in range of attack
         Collider2D[] hitEnemiesOrBoxes = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
@@ -171,11 +173,17 @@ public class CharacterController : MonoBehaviour
         isFacingRight = !isFacingRight;
     }
 
-    void RandomJumpSFX()
+    void PlayRandomJumpSFX()
     {
-        randomSound.clip = jumpAudio[UnityEngine.Random.Range(0, jumpAudio.Length)];
-        randomSound.Play();
+        audioSource.clip = jumpSFX[UnityEngine.Random.Range(0, jumpSFX.Length)];
+        audioSource.Play();
         //    CallAudio();
+    }
+
+    void PlayAttackSound()
+    {
+        audioSource.clip = attackSFX;
+        audioSource.Play();
     }
 
     private void OnDrawGizmos()
