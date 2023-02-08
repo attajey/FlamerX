@@ -35,6 +35,10 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private float attackRate = 2f;
     private float nextAttackTime = 0f;
 
+    [Header("SFX")]
+    [SerializeField] private AudioClip[] jumpAudio;
+    private AudioSource randomSound;
+
     private Animator anim;
     private Rigidbody2D rBody;
 
@@ -51,7 +55,11 @@ public class CharacterController : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rBody = GetComponent<Rigidbody2D>();
+        randomSound = GetComponent<AudioSource>();
+        
         currentHealth = maxHealth;
+
+
 
     }
 
@@ -80,6 +88,7 @@ public class CharacterController : MonoBehaviour
         if (IsPressingJumpButton() && IsGrounded())
         {
             rBody.AddForce(new Vector2(0.0f, jumpForce), ForceMode2D.Impulse);
+            RandomJumpSFX();
             anim.SetTrigger(isJumping);
         }
 
@@ -160,6 +169,13 @@ public class CharacterController : MonoBehaviour
         transform.localScale = temp;
 
         isFacingRight = !isFacingRight;
+    }
+
+    void RandomJumpSFX()
+    {
+        randomSound.clip = jumpAudio[UnityEngine.Random.Range(0, jumpAudio.Length)];
+        randomSound.Play();
+        //    CallAudio();
     }
 
     private void OnDrawGizmos()
