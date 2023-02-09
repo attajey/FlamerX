@@ -36,6 +36,9 @@ public class EnemyController : MonoBehaviour
     private int currentHealth;
 
     private int isAttacking = Animator.StringToHash("isAttacking");
+    private int isDead = Animator.StringToHash("isDead");
+
+    private bool isNotDeadYet = true;
 
 
     void Start()
@@ -50,10 +53,8 @@ public class EnemyController : MonoBehaviour
         distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
         //Vector2 direction = player.transform.position - transform.position;
         //direction.Normalize();
-        if (!anim.GetBool("isDead"))
+        if (currentHealth > 0)
         {
-
-
             if (Time.time >= nextAttackTime)
             {
                 if (distanceToPlayer <= rangeToAttack)
@@ -61,8 +62,28 @@ public class EnemyController : MonoBehaviour
                     Attack();
                     nextAttackTime = Time.time + 1f / attackRate;
                 }
+                //if (currentHealth <= 0)
+                //{
+
+
+                //}
             }
         }
+        else if (currentHealth <= 0)
+        {
+            Die();
+
+            //if (isNotDeadYet)
+            //{
+            //    ScoreScript.scoreValue += 100;
+            //    Die();
+            //    isNotDeadYet = false;
+
+            //}
+            isNotDeadYet = false;
+
+        }
+
 
 
         //if (distanceToPlayer <= rangeToChase)
@@ -103,13 +124,6 @@ public class EnemyController : MonoBehaviour
 
         // Play hurt anim
         anim.SetTrigger("Hurt");
-
-        if (currentHealth <= 0)
-        {
-
-            Die();
-            
-        }
     }
 
     public int GetCurrentHealth()
@@ -144,12 +158,15 @@ public class EnemyController : MonoBehaviour
 
     void Die()
     {
-        // Play die anim
-        anim.SetBool("isDead", true);
-       
-        // Disable the enemy
-        Destroy(this.gameObject, 2f);
-        ScoreScript.scoreValue += 100;
+        if (isNotDeadYet) { 
+
+            // Play die anim
+            anim.SetTrigger(isDead);
+            ScoreScript.scoreValue += 100;
+
+            // Disable the enemy
+            Destroy(this.gameObject, 2f);
+        }
     }
 
 

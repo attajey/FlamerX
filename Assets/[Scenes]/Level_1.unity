@@ -32624,6 +32624,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Goblin
       objectReference: {fileID: 0}
+    - target: {fileID: 3832056911806592400, guid: 9708b9c3ebbbd4c4da603842913ee7c0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4329659213587118756, guid: 9708b9c3ebbbd4c4da603842913ee7c0, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -32871,6 +32875,10 @@ PrefabInstance:
     - target: {fileID: 4882282265888066829, guid: 49704f6f3e0754f4597f3b3e80154157, type: 3}
       propertyPath: m_Name
       value: Flying eye
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882282265888066829, guid: 49704f6f3e0754f4597f3b3e80154157, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5815290630350530577, guid: 49704f6f3e0754f4597f3b3e80154157, type: 3}
       propertyPath: player
