@@ -39,17 +39,25 @@ public class EnemyController : MonoBehaviour
     private int isDead = Animator.StringToHash("isDead");
 
     private bool isNotDeadYet = true;
+    private bool isFacingRight = true;
+
+    private Rigidbody2D playerRigidBody;
+    private Rigidbody2D rbody;
+
 
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        playerRigidBody = player.GetComponent<Rigidbody2D>();
+        rbody = this.GetComponent<Rigidbody2D>();
 
         currentHealth = maxHealth;
     }
 
     void Update()
     {
+        // Set the isFacingRight for enemy to be able to face the player in case the player is in range
         distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
         //Vector2 direction = player.transform.position - transform.position;
         //direction.Normalize();
@@ -59,8 +67,22 @@ public class EnemyController : MonoBehaviour
             {
                 if (distanceToPlayer <= rangeToAttack)
                 {
+                    //SetFacing();
+
+                    //this.GetComponent<MovingObject>().enabled = false;
+                    // Flip the character for direction change
+                    //if ((isFacingRight && player.GetComponent<CharacterController>().GetIsFacingRight() /*playerRigidBody.velocity.x < 0*/) || (!isFacingRight && !player.GetComponent<CharacterController>().GetIsFacingRight()/*playerRigidBody.velocity.x > 0)*/))
+                    //{
+                    //    Debug.Log(playerRigidBody.velocity.x);
+                    //    Flip();
+                    //}
                     Attack();
                     nextAttackTime = Time.time + 1f / attackRate;
+                }
+                else
+                {
+                    //this.GetComponent<MovingObject>().enabled = true;
+
                 }
                 //if (currentHealth <= 0)
                 //{
@@ -102,6 +124,18 @@ public class EnemyController : MonoBehaviour
         //{
         //    this.GetComponent<MovingObject>().Move();
         //}
+    }
+
+    private void SetFacing()
+    {
+        if (this.rbody.velocity.x > 0)
+        {
+            isFacingRight = true;
+        }
+        else
+        {
+            isFacingRight = false;
+        }
     }
 
     private void Attack()
@@ -179,5 +213,14 @@ public class EnemyController : MonoBehaviour
         }
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+
+    private void Flip()
+    {
+        Vector3 temp = transform.localScale;
+        temp.x *= -1;
+        transform.localScale = temp;
+
+        //isFacingRight = !isFacingRight;
     }
 }

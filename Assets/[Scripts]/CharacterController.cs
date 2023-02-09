@@ -129,6 +129,11 @@ public class CharacterController : MonoBehaviour
         }
     }
 
+    public bool GetIsFacingRight()
+    {
+        return isFacingRight;
+    }
+
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
