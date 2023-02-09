@@ -1,6 +1,6 @@
-COMP313 Software Development Project 2 - Sec.006 (W2023)
+## COMP313 Software Development Project 2 - Sec.006 (W2023)
 
-Game: FlamerX
+Game: # FlamerX
 
 Submitted to: Professor Mohammad Anwar Hossain
 Submitted by:
