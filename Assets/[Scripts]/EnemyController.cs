@@ -50,12 +50,17 @@ public class EnemyController : MonoBehaviour
         distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
         //Vector2 direction = player.transform.position - transform.position;
         //direction.Normalize();
-        if (Time.time >= nextAttackTime)
+        if (!anim.GetBool("isDead"))
         {
-            if (distanceToPlayer <= rangeToAttack)
+
+
+            if (Time.time >= nextAttackTime)
             {
-                Attack();
-                nextAttackTime = Time.time + 1f / attackRate;
+                if (distanceToPlayer <= rangeToAttack)
+                {
+                    Attack();
+                    nextAttackTime = Time.time + 1f / attackRate;
+                }
             }
         }
 
@@ -105,6 +110,11 @@ public class EnemyController : MonoBehaviour
             Die();
             
         }
+    }
+
+    public int GetCurrentHealth()
+    {
+        return currentHealth;
     }
 
 

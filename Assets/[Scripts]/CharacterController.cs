@@ -117,7 +117,7 @@ public class CharacterController : MonoBehaviour
         // Damage enemies in range of attack
         foreach (Collider2D enemyOrBox in hitEnemiesOrBoxes)
         {
-            if (enemyOrBox.CompareTag("Enemy")) // To eliminate Confiner from hitEnemies array. Confiner is for Cinemachine ? 
+            if (enemyOrBox.CompareTag("Enemy") && enemyOrBox.GetComponent<EnemyController>().GetCurrentHealth() >= 0) // To eliminate Confiner from hitEnemies array. Confiner is for Cinemachine ? 
             {
                 enemyOrBox.GetComponent<EnemyController>().TakeDamage(attackDamage);
             }
