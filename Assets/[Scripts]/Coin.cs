@@ -15,7 +15,7 @@ public class Coin : MonoBehaviour, ICollectible
     {
         //OnCoinCollected += PlayRandomSFX;
         //PlayRandomSFX();
-        Debug.Log("Collected a coin!");
+        //Debug.Log("Collected a coin!");
         Destroy(gameObject);
         OnCoinCollected?.Invoke();
     }

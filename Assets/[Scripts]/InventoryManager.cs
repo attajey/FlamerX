@@ -7,6 +7,7 @@ public class InventoryManager : MonoBehaviour
 
     [Header("SFX")]
     [SerializeField] private AudioClip[] coinSFX;
+    [SerializeField] private AudioClip fuelSFX;
     private AudioSource audioSource;
     private void Start()
     {
@@ -20,6 +21,10 @@ public class InventoryManager : MonoBehaviour
         {
             Coin.OnCoinCollected += PlayRandomCoinSFX;
         }
+        if (collision.CompareTag("Fuel"))
+        {
+            Fuel.OnFuelCollected += PlayFuelSFX;
+        }
     }
 
     public void PlayRandomCoinSFX()
@@ -27,5 +32,11 @@ public class InventoryManager : MonoBehaviour
         audioSource.clip = coinSFX[UnityEngine.Random.Range(0, coinSFX.Length)];
         audioSource.Play();
         //    CallAudio();
+    }
+
+    public void PlayFuelSFX()
+    {
+        audioSource.clip = fuelSFX;
+        audioSource.Play();
     }
 }
