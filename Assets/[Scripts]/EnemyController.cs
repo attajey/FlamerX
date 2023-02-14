@@ -39,7 +39,7 @@ public class EnemyController : MonoBehaviour
     private int isDead = Animator.StringToHash("isDead");
 
     private bool isNotDeadYet = true;
-    private bool isFacingRight = true;
+    private bool isFacingRight;
 
     private Rigidbody2D playerRigidBody;
     private Rigidbody2D rbody;
@@ -51,62 +51,31 @@ public class EnemyController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         playerRigidBody = player.GetComponent<Rigidbody2D>();
         rbody = this.GetComponent<Rigidbody2D>();
-
         currentHealth = maxHealth;
+
     }
 
     void Update()
     {
-        // Set the isFacingRight for enemy to be able to face the player in case the player is in range
         distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
-        //Vector2 direction = player.transform.position - transform.position;
-        //direction.Normalize();
         if (currentHealth > 0)
         {
             if (Time.time >= nextAttackTime)
             {
                 if (distanceToPlayer <= rangeToAttack)
                 {
-                    //SetFacing();
-
-                    //this.GetComponent<MovingObject>().enabled = false;
-                    // Flip the character for direction change
-                    //if ((isFacingRight && player.GetComponent<CharacterController>().GetIsFacingRight() /*playerRigidBody.velocity.x < 0*/) || (!isFacingRight && !player.GetComponent<CharacterController>().GetIsFacingRight()/*playerRigidBody.velocity.x > 0)*/))
-                    //{
-                    //    Debug.Log(playerRigidBody.velocity.x);
-                    //    Flip();
-                    //}
+                    FaceTo(player.transform);
                     Attack();
                     nextAttackTime = Time.time + 1f / attackRate;
                 }
-                else
-                {
-                    //this.GetComponent<MovingObject>().enabled = true;
-
-                }
-                //if (currentHealth <= 0)
-                //{
-
-
-                //}
             }
         }
         else if (currentHealth <= 0)
         {
             Die();
-
-            //if (isNotDeadYet)
-            //{
-            //    ScoreScript.scoreValue += 100;
-            //    Die();
-            //    isNotDeadYet = false;
-
-            //}
             isNotDeadYet = false;
 
         }
-
-
 
         //if (distanceToPlayer <= rangeToChase)
         //{
@@ -126,17 +95,19 @@ public class EnemyController : MonoBehaviour
         //}
     }
 
-    private void SetFacing()
+    private void FaceTo(Transform target)
     {
-        if (this.rbody.velocity.x > 0)
-        {
-            isFacingRight = true;
-        }
-        else
-        {
-            isFacingRight = false;
-        }
+        Vector3 targ = target.position;
+        targ.z = 0f;
+
+        Vector3 objectPos = transform.position;
+        targ.x = targ.x - objectPos.x;
+        targ.y = 0f;//targ.y - objectPos.y;
+
+        float angle = Mathf.Atan2(targ.y, targ.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(new Vector3(0, angle, 0));
     }
+
 
     private void Attack()
     {
@@ -192,7 +163,8 @@ public class EnemyController : MonoBehaviour
 
     void Die()
     {
-        if (isNotDeadYet) { 
+        if (isNotDeadYet)
+        {
 
             // Play die anim
             anim.SetTrigger(isDead);
@@ -215,12 +187,4 @@ public class EnemyController : MonoBehaviour
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 
-    private void Flip()
-    {
-        Vector3 temp = transform.localScale;
-        temp.x *= -1;
-        transform.localScale = temp;
-
-        //isFacingRight = !isFacingRight;
-    }
 }

@@ -45,7 +45,6 @@ GameObject:
   - component: {fileID: 7491584773649153679}
   - component: {fileID: 3214158807399398289}
   - component: {fileID: 1655903006290888968}
-  - component: {fileID: 7134753491234115100}
   - component: {fileID: 1875449872}
   m_Layer: 6
   m_Name: Skeleton Model
@@ -218,26 +217,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 35a4854720af3c84da42fa084aa0b027, type: 3}
   - {fileID: 8300000, guid: 99449b89759748846a2d7a26f1c6d79c, type: 3}
   - {fileID: 8300000, guid: 341e211f33ba00245a051563799a90ce, type: 3}
---- !u!114 &7134753491234115100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2141708616556593850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55d7eb79ddfb8a7488677c1356862a95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.5
-  offset: 0.1
-  movingTransform: {fileID: 2141708616556593849}
-  waypoints: {fileID: 7134753492438106483}
-  animator: {fileID: 2141708616556593851}
-  walkingParameterName: xVelocity
-  currentWayPoint: 0
-  hasRigidBody: 0
 --- !u!82 &1875449872
 AudioSource:
   m_ObjectHideFlags: 0

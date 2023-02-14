@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 4860557263235345771}
   - component: {fileID: 4860557263235345770}
   - component: {fileID: 4860557263235345768}
-  - component: {fileID: 4860557263235345769}
   - component: {fileID: 590275085}
   m_Layer: 6
   m_Name: Goblin Model
@@ -187,26 +186,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 35a4854720af3c84da42fa084aa0b027, type: 3}
   - {fileID: 8300000, guid: 99449b89759748846a2d7a26f1c6d79c, type: 3}
   - {fileID: 8300000, guid: 341e211f33ba00245a051563799a90ce, type: 3}
---- !u!114 &4860557263235345769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 294250113738385563}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55d7eb79ddfb8a7488677c1356862a95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.5
-  offset: 0.1
-  movingTransform: {fileID: 294250113738385564}
-  waypoints: {fileID: 630812620005895299}
-  animator: {fileID: 294250113738385562}
-  walkingParameterName: xVelocity
-  currentWayPoint: 0
-  hasRigidBody: 0
 --- !u!82 &590275085
 AudioSource:
   m_ObjectHideFlags: 0

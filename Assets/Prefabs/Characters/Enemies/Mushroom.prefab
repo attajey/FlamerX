@@ -155,7 +155,6 @@ GameObject:
   - component: {fileID: 6336609791489116647}
   - component: {fileID: 708374566111507625}
   - component: {fileID: 708374566111507624}
-  - component: {fileID: 708374566111507622}
   - component: {fileID: 708374566111507623}
   - component: {fileID: 1640446947}
   m_Layer: 6
@@ -300,26 +299,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2352322, y: 0.3690356}
   m_EdgeRadius: 0
---- !u!114 &708374566111507622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6336609791489116644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55d7eb79ddfb8a7488677c1356862a95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.5
-  offset: 0.1
-  movingTransform: {fileID: 6336609791489116633}
-  waypoints: {fileID: 3787037667040120687}
-  animator: {fileID: 6336609791489116647}
-  walkingParameterName: xVelocity
-  currentWayPoint: 0
-  hasRigidBody: 0
 --- !u!114 &708374566111507623
 MonoBehaviour:
   m_ObjectHideFlags: 0
