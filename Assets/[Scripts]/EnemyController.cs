@@ -26,6 +26,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float attackRange = 0.5f;
     [SerializeField] private int attackDamage = 10;
     [SerializeField] private float attackRate = 1f;
+    [SerializeField] private GameObject bullet;
     private float nextAttackTime = 0f;
 
     [Header("SFX")]
@@ -119,6 +120,10 @@ public class EnemyController : MonoBehaviour
         {
             hitPlayer.GetComponent<CharacterController>().TakeDamage(attackDamage);
 
+        }
+        if (gameObject.name.Equals("Flying eye Model"))
+       {
+            Instantiate(bullet, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
         }
 
     }
