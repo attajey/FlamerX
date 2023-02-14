@@ -32896,6 +32896,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4416940985621408263, guid: 49704f6f3e0754f4597f3b3e80154157, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4416940985621408263, guid: 49704f6f3e0754f4597f3b3e80154157, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.58
+      objectReference: {fileID: 0}
     - target: {fileID: 4882282265888066829, guid: 49704f6f3e0754f4597f3b3e80154157, type: 3}
       propertyPath: m_Name
       value: Flying eye
@@ -32922,11 +32930,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7252790417932674564, guid: 49704f6f3e0754f4597f3b3e80154157, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.39
+      value: -12.45
       objectReference: {fileID: 0}
     - target: {fileID: 7252790417932674564, guid: 49704f6f3e0754f4597f3b3e80154157, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.51
+      value: 4.27
       objectReference: {fileID: 0}
     - target: {fileID: 7252790417932674564, guid: 49704f6f3e0754f4597f3b3e80154157, type: 3}
       propertyPath: m_LocalPosition.z
