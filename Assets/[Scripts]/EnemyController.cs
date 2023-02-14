@@ -45,6 +45,7 @@ public class EnemyController : MonoBehaviour
     private Rigidbody2D playerRigidBody;
     private Rigidbody2D rbody;
 
+    public static event Action OnEnemyKilled;
 
 
     void Start()
@@ -183,7 +184,8 @@ public class EnemyController : MonoBehaviour
 
             // Play die anim
             anim.SetTrigger(isDead);
-            ScoreScript.scoreValue += 100;
+            //ScoreText.scoreValue += 100;
+            OnEnemyKilled?.Invoke();
 
             // Disable the enemy
             Destroy(this.gameObject, 2f);
