@@ -12,20 +12,21 @@ public class InventoryManager : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        Coin.OnCoinCollected += PlayRandomCoinSFX;
+        Fuel.OnFuelCollected += PlayFuelSFX;
+
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Coin"))
-        {
-            Coin.OnCoinCollected += PlayRandomCoinSFX;
-        }
-        if (collision.CompareTag("Fuel"))
-        {
-            Fuel.OnFuelCollected += PlayFuelSFX;
-        }
-    }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.CompareTag("Coin"))
+    //    {
+    //    }
+    //    if (collision.CompareTag("Fuel"))
+    //    {
+    //    }
+    //}
 
     public void PlayRandomCoinSFX()
     {

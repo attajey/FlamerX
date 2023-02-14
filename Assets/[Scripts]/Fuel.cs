@@ -11,6 +11,4 @@ public class Fuel : MonoBehaviour, ICollectible
         Destroy(gameObject);
         OnFuelCollected?.Invoke();
     }
-
-
 }

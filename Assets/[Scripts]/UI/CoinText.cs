@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class CoinText : MonoBehaviour
 {
-    // Start is called before the first frame update
     static int coinCount = 0;
     private Text cointText;
 
