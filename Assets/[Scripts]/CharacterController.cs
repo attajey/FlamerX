@@ -51,6 +51,7 @@ public class CharacterController : MonoBehaviour
 
     [SerializeField] private int maxHealth = 100;
     private int currentHealth;
+    public HealthBar healthbar;
 
     //TODO: Delete all hard coded strings and make them variables
 
@@ -61,6 +62,7 @@ public class CharacterController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         
         currentHealth = maxHealth;
+        healthbar.SetMaxHealth(maxHealth);
 
 
 
@@ -137,6 +139,7 @@ public class CharacterController : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        healthbar.SetHealth(currentHealth);
 
         // Play hurt anim
         //anim.SetTrigger("Hurt");

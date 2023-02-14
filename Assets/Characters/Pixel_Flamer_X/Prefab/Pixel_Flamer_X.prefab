@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 79118429}
   - component: {fileID: 79118430}
   - component: {fileID: 79118434}
+  - component: {fileID: 1812025438}
+  - component: {fileID: 1812025439}
   - component: {fileID: 1812025432}
   m_Layer: 8
   m_Name: Pixel_Flamer_X
@@ -204,6 +206,44 @@ MonoBehaviour:
   - {fileID: 8300000, guid: be11d134354c0ce4d9a6535ff801ebdd, type: 3}
   attackSFX: {fileID: 8300000, guid: 3835ac7ea641e9e4b8ba4afd8fcb2bcb, type: 3}
   maxHealth: 100
+--- !u!114 &1812025438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1db1370e35f8124688590328a16f51e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1812025439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ab524ecf4689fc468fe890ff7d90140, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinSFX:
+  - {fileID: 8300000, guid: 80c91b5210947514ebd9ebd494ae26ae, type: 3}
+  - {fileID: 8300000, guid: d1299f14e3a46dc468d44eb3e92fe288, type: 3}
+  - {fileID: 8300000, guid: 45766bab5f6f48946898bad374da0c22, type: 3}
+  - {fileID: 8300000, guid: a6cc65fc101de2f4281b71e7f43300b6, type: 3}
+  - {fileID: 8300000, guid: 7903dccb12067414daa0c2d94878e8af, type: 3}
+  - {fileID: 8300000, guid: 60f4f170e7effd442a46fc7120883b9d, type: 3}
+  - {fileID: 8300000, guid: 4a9ee1a242747ab4fb2579af055c7359, type: 3}
+  - {fileID: 8300000, guid: be00c9eba366ff1419493fde02f3b956, type: 3}
+  - {fileID: 8300000, guid: 236539f48383816459ef31b31527d3e7, type: 3}
+  - {fileID: 8300000, guid: 49ce62e4e303842439ac4fc030e5e2e3, type: 3}
+  - {fileID: 8300000, guid: d2cb69da96e020f4188a3c1eacd16779, type: 3}
+  - {fileID: 8300000, guid: 25fb87b135a3e8b4388d2c084eb69c7e, type: 3}
+  fuelSFX: {fileID: 8300000, guid: 268e4d53b93141646b645aa3acafabb7, type: 3}
 --- !u!82 &1812025432
 AudioSource:
   m_ObjectHideFlags: 0
@@ -213,7 +253,7 @@ AudioSource:
   m_GameObject: {fileID: 144970}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1702155580071409835, guid: 3eb4601f5a8c886489dc0108d69377b9, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
