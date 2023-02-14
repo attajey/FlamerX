@@ -8,12 +8,14 @@ public class InventoryManager : MonoBehaviour
     [Header("SFX")]
     [SerializeField] private AudioClip[] coinSFX;
     [SerializeField] private AudioClip fuelSFX;
+    [SerializeField] private AudioClip potionSFX;
     private AudioSource audioSource;
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
         Coin.OnCoinCollected += PlayRandomCoinSFX;
         Fuel.OnFuelCollected += PlayFuelSFX;
+        Potion.OnPotionCollected += PlayPotionSFX;
 
 
     }
@@ -38,6 +40,12 @@ public class InventoryManager : MonoBehaviour
     public void PlayFuelSFX()
     {
         audioSource.clip = fuelSFX;
+        audioSource.Play();
+    }
+
+    public void PlayPotionSFX()
+    {
+        audioSource.clip = potionSFX;
         audioSource.Play();
     }
 }

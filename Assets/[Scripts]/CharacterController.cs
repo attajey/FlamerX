@@ -53,6 +53,10 @@ public class CharacterController : MonoBehaviour
     private int currentHealth;
     public HealthBar healthbar;
 
+    [SerializeField] private int maxWater = 100;
+    private int currentWater;
+    public WaterBar waterbar;
+
     //TODO: Delete all hard coded strings and make them variables
 
     private void Awake()
@@ -64,8 +68,20 @@ public class CharacterController : MonoBehaviour
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
 
+        currentWater = maxWater;
+        waterbar.SetMaxWater(maxWater);
 
-
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Health Potion"))
+        {
+            Potion.OnPotionCollected += IncrementHealth;
+        }
+        else if (collision.CompareTag("Water Potion"))
+        {
+            Potion.OnPotionCollected += DecreaseThirst;
+        }
     }
 
     private void Update()
@@ -123,6 +139,7 @@ public class CharacterController : MonoBehaviour
             if (enemyOrBox.CompareTag("Enemy") && enemyOrBox.GetComponent<EnemyController>().GetCurrentHealth() >= 0) // To eliminate Confiner from hitEnemies array. Confiner is for Cinemachine ? 
             {
                 enemyOrBox.GetComponent<EnemyController>().TakeDamage(attackDamage);
+                IncreaseThirst();
             }
             else if (enemyOrBox.CompareTag("Box"))
             {
@@ -149,6 +166,25 @@ public class CharacterController : MonoBehaviour
             Debug.Log("Character is dead!");
             //Die();
         }
+    }
+
+    public void IncrementHealth()
+    {
+        currentHealth += 20;
+        healthbar.SetHealth(currentHealth);
+    }
+
+    public void DecreaseThirst()
+    {
+        currentWater += 20;
+        waterbar.SetWater(currentWater);
+    }
+
+    public void IncreaseThirst()
+    {
+        currentWater -= 5;
+        waterbar.SetWater(currentWater);
+
     }
     //void Die()
     //{

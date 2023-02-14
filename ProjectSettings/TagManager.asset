@@ -16,6 +16,12 @@ TagManager:
   - Collectible
   - Coin
   - Fuel
+  - OptionsScreen
+  - OptionsButton
+  - PlayButton
+  - Potion
+  - Water Potion
+  - Health Potion
   layers:
   - Default
   - TransparentFX
