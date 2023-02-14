@@ -13,6 +13,8 @@ TagManager:
   - SaveButton
   - LoadButton
   - Box
+  - Collectible
+  - Coin
   layers:
   - Default
   - TransparentFX
