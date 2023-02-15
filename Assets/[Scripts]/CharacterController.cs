@@ -64,7 +64,7 @@ public class CharacterController : MonoBehaviour
         anim = GetComponent<Animator>();
         rBody = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
-        
+
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
 
@@ -170,14 +170,30 @@ public class CharacterController : MonoBehaviour
 
     public void IncrementHealth()
     {
-        currentHealth += 20;
-        healthbar.SetHealth(currentHealth);
+        if (currentHealth <= 100)
+        {
+            currentHealth += 20;
+
+        }
+        else
+        {
+            currentHealth = 100;
+        }
+            healthbar.SetHealth(currentHealth);
     }
 
     public void DecreaseThirst()
     {
-        currentWater += 20;
-        waterbar.SetWater(currentWater);
+        if (currentWater <= 100)
+        {
+            currentWater += 20;
+
+        }
+        else
+        {
+            currentWater = 100;
+        }
+            waterbar.SetWater(currentWater);
     }
 
     public void IncreaseThirst()

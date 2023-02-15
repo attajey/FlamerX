@@ -81,7 +81,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 11
   m_Sprite: {fileID: 21300000, guid: 09efc802c26c25f44967a8c27038162c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -206,6 +206,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: be11d134354c0ce4d9a6535ff801ebdd, type: 3}
   attackSFX: {fileID: 8300000, guid: 3835ac7ea641e9e4b8ba4afd8fcb2bcb, type: 3}
   maxHealth: 100
+  healthbar: {fileID: 0}
+  maxWater: 100
+  waterbar: {fileID: 0}
 --- !u!114 &1812025438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,6 +247,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d2cb69da96e020f4188a3c1eacd16779, type: 3}
   - {fileID: 8300000, guid: 25fb87b135a3e8b4388d2c084eb69c7e, type: 3}
   fuelSFX: {fileID: 8300000, guid: 268e4d53b93141646b645aa3acafabb7, type: 3}
+  potionSFX: {fileID: 8300000, guid: 169112e43cf0d83418c11fcefafa3de1, type: 3}
 --- !u!82 &1812025432
 AudioSource:
   m_ObjectHideFlags: 0

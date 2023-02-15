@@ -59,22 +59,30 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
-        RaycastHit2D playerDetected = Physics2D.Raycast(transform.position, -Vector2.up);
-        if (playerDetected.collider.gameObject.CompareTag("Player"))
-        {
-            if (Time.time >= nextAttackTime)
-            {
-                Attack();
-                nextAttackTime = Time.time + 1f / attackRate;
 
-            }
-        }
         distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
         if (currentHealth > 0)
         {
             if (Time.time >= nextAttackTime)
             {
-                if (distanceToPlayer <= rangeToAttack)
+                if (gameObject.name.Equals("Flying eye Model"))
+                {
+                    RaycastHit2D playerDetected = Physics2D.Raycast(transform.position, -Vector2.up, Mathf.Infinity, playerLayer);
+                    if (playerDetected.collider != null)
+                    {
+
+
+                        if (playerDetected.collider.gameObject.CompareTag("Player"))
+                        {
+
+                            Attack();
+                            nextAttackTime = Time.time + 1f / attackRate;
+
+
+                        }
+                    }
+                }
+                else if (distanceToPlayer <= rangeToAttack)
                 {
                     FaceTo(player.transform);
                     Attack();

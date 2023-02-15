@@ -30817,6 +30817,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 21229744, guid: fe94474a32dee5c49a757da0451ac03f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 79118434, guid: fe94474a32dee5c49a757da0451ac03f, type: 3}
       propertyPath: waterbar
       value: 
@@ -30825,10 +30829,6 @@ PrefabInstance:
       propertyPath: healthbar
       value: 
       objectReference: {fileID: 1556963264}
-    - target: {fileID: 1812025439, guid: fe94474a32dee5c49a757da0451ac03f, type: 3}
-      propertyPath: potionSFX
-      value: 
-      objectReference: {fileID: 8300000, guid: 169112e43cf0d83418c11fcefafa3de1, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe94474a32dee5c49a757da0451ac03f, type: 3}
 --- !u!1001 &1243873195
@@ -34645,6 +34645,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1131972915}
     m_Modifications:
+    - target: {fileID: 3611111118272021400, guid: 49704f6f3e0754f4597f3b3e80154157, type: 3}
+      propertyPath: m_SortingOrder
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 4416940985621408263, guid: 49704f6f3e0754f4597f3b3e80154157, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.02
@@ -34671,7 +34675,7 @@ PrefabInstance:
       objectReference: {fileID: 1812025431}
     - target: {fileID: 5815290630350530577, guid: 49704f6f3e0754f4597f3b3e80154157, type: 3}
       propertyPath: playerLayer.m_Bits
-      value: 0
+      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 7252790417932674564, guid: 49704f6f3e0754f4597f3b3e80154157, type: 3}
       propertyPath: m_RootOrder
