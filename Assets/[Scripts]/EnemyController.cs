@@ -97,23 +97,6 @@ public class EnemyController : MonoBehaviour
             isNotDeadYet = false;
 
         }
-
-        //if (distanceToPlayer <= rangeToChase)
-        //{
-        //    if (player.transform.localScale.x == transform.localScale.x)
-        //    {
-        //        Vector3 temp = transform.localScale;
-        //        temp.x *= -1;
-        //        transform.localScale = temp;
-
-        //    }
-        //    //Debug.Log("chasing");
-        //    transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-        //}
-        //else
-        //{
-        //    this.GetComponent<MovingObject>().Move();
-        //}
     }
 
     private void FaceTo(Transform target)
@@ -132,7 +115,6 @@ public class EnemyController : MonoBehaviour
 
     private void Attack()
     {
-        anim.SetTrigger(isAttacking);
         PlayAttackSFX();
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         Collider2D hitPlayer = Physics2D.OverlapCircle(attackPoint.position, attackRange, playerLayer);
@@ -143,9 +125,10 @@ public class EnemyController : MonoBehaviour
         }
         if (gameObject.name.Equals("Flying eye Model"))
         {
-            Instantiate(bullet, new Vector3(transform.position.x, transform.position.y - 0.5f , transform.position.z), Quaternion.identity);
+            Instantiate(bullet, new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z), Quaternion.identity);
 
         }
+        anim.SetTrigger(isAttacking);
 
     }
 
