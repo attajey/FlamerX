@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
+    public int damageRate = 20;
+
+
     // Start is called before the first frame update
     void Start()
     {
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        //this.transform.position.Set(this.transform.position.x, 0, this.transform.position.z);
-        this.gameObject.transform.GetChild(2).gameObject.SetActive(true);
-        
+        if (collision.transform.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<CharacterController>().TakeDamage(damageRate);
+            Destroy(gameObject);
+        }
     }
 }

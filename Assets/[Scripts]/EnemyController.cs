@@ -28,6 +28,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float attackRate = 1f;
     [SerializeField] private GameObject bullet;
     private float nextAttackTime = 0f;
+    [SerializeField] private float distanceToDropBullet = 5f;
 
     [Header("SFX")]
     [SerializeField] private AudioClip[] attackSFX;
@@ -67,7 +68,7 @@ public class EnemyController : MonoBehaviour
             {
                 if (gameObject.name.Equals("Flying eye Model"))
                 {
-                    RaycastHit2D playerDetected = Physics2D.Raycast(transform.position, -Vector2.up, Mathf.Infinity, playerLayer);
+                    RaycastHit2D playerDetected = Physics2D.Raycast(transform.position, -Vector2.up, distanceToDropBullet, playerLayer);
                     if (playerDetected.collider != null)
                     {
 
@@ -142,7 +143,8 @@ public class EnemyController : MonoBehaviour
         }
         if (gameObject.name.Equals("Flying eye Model"))
         {
-            Instantiate(bullet, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+            Instantiate(bullet, new Vector3(transform.position.x, transform.position.y - 0.5f , transform.position.z), Quaternion.identity);
+
         }
 
     }
