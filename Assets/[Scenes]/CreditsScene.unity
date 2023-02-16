@@ -161,7 +161,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 09bb1c8cde696bd4ebacfc4a3b2a0420, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -684,8 +684,8 @@ MonoBehaviour:
     Montoya\n\nMinh Trung (Vincent) Ho \n\nPinkherwin Relos\n\nErica Charlton\n\nProf.
     Mohammad Anwar Hossain"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ebcb2b69725e31b4ebcfac6c9ff57272, type: 2}
-  m_sharedMaterial: {fileID: 4794348697399075845, guid: ebcb2b69725e31b4ebcfac6c9ff57272, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f0c8ca53bdc916b48b40081e55d3077f, type: 2}
+  m_sharedMaterial: {fileID: 4794348697399075845, guid: f0c8ca53bdc916b48b40081e55d3077f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -837,8 +837,8 @@ MonoBehaviour:
     Special
     thanks to: '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ebcb2b69725e31b4ebcfac6c9ff57272, type: 2}
-  m_sharedMaterial: {fileID: 4794348697399075845, guid: ebcb2b69725e31b4ebcfac6c9ff57272, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 186cd0fa6e54efe4980d180a07914faa, type: 2}
+  m_sharedMaterial: {fileID: 4794348697399075845, guid: 186cd0fa6e54efe4980d180a07914faa, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
