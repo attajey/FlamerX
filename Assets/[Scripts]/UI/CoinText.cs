@@ -31,6 +31,7 @@ public class CoinText : MonoBehaviour
     public void IncreamentCoinCount()
     {
         coinCount++;
+        GlobalVariables.itemsCollected++;
         cointText.text = $"Coins: {coinCount}";
         //cointText.SetText($"Coins: {coinCount}");
     }
