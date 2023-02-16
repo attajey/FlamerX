@@ -55,6 +55,8 @@ public class EnemyController : MonoBehaviour
         playerRigidBody = player.GetComponent<Rigidbody2D>();
         rbody = this.GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
+        bullet.layer = 11;
+
 
     }
 
@@ -125,7 +127,7 @@ public class EnemyController : MonoBehaviour
         }
         if (gameObject.name.Equals("Flying eye Model"))
         {
-            Instantiate(bullet, new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z), Quaternion.identity);
+            Instantiate(bullet, new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z), Quaternion.Euler(0f, 0f, -90f), transform);
 
         }
         anim.SetTrigger(isAttacking);
