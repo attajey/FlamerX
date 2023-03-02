@@ -26,9 +26,9 @@ public class ScoreText : MonoBehaviour
 
     public void IncreamentScoreCount()
     {
-        scoreCount++;
-        GlobalVariables.totalScore++;
-        scoreText.text = $"Score: {scoreCount}";
+        // scoreCount++;
+        // GlobalVariables.totalScore += 500;
+        scoreText.text = $"Score: {GlobalVariables.totalScore}";
         //cointText.SetText($"Coins: {coinCount}");
     }
 }

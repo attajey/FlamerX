@@ -8,6 +8,8 @@ public class Fuel : MonoBehaviour, ICollectible
     public void Collect()
     {
         Debug.Log("Fuel Collected");
+        GlobalVariables.itemsCollected++;
+        GlobalVariables.totalScore += 100;
         Destroy(gameObject);
         OnFuelCollected?.Invoke();
     }

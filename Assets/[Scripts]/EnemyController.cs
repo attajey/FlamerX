@@ -181,6 +181,8 @@ public class EnemyController : MonoBehaviour
             anim.SetTrigger(isDead);
             //ScoreText.scoreValue += 100;
             OnEnemyKilled?.Invoke();
+            GlobalVariables.enemiesKilled++;
+            GlobalVariables.totalScore += 500;
 
             // Disable the enemy
             Destroy(this.gameObject, 2f);
