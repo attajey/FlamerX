@@ -66,10 +66,10 @@ public class CharacterController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
         currentHealth = maxHealth;
-        healthbar.SetMaxHealth(maxHealth);
+        if ( healthbar != null ) healthbar.SetMaxHealth(maxHealth);
 
         currentWater = maxWater;
-        waterbar.SetMaxWater(maxWater);
+        if ( waterbar != null ) waterbar.SetMaxWater(maxWater);
 
     }
     private void OnTriggerEnter2D(Collider2D collision)

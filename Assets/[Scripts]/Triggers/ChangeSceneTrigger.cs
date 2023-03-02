@@ -26,7 +26,7 @@ public class ChangeSceneTrigger: MonoBehaviour
         // if the player triggers, load a scene
         if (IsPlayer(other.gameObject))
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(sceneLevel);
+            if (sceneLevel.Length > 0 ) UnityEngine.SceneManagement.SceneManager.LoadScene(sceneLevel);
         }
     }
 

@@ -55,7 +55,7 @@ public class EnemyController : MonoBehaviour
         playerRigidBody = player.GetComponent<Rigidbody2D>();
         rbody = this.GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
-        bullet.layer = 11;
+        if ( bullet != null ) bullet.layer = 11;
 
 
     }
