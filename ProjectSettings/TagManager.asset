@@ -22,6 +22,8 @@ TagManager:
   - Potion
   - Water Potion
   - Health Potion
+  - Buff Ability
+  - Heal Ability
   layers:
   - Default
   - TransparentFX

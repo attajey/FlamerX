@@ -31659,6 +31659,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 144970, guid: fe94474a32dee5c49a757da0451ac03f, type: 3}
   m_PrefabInstance: {fileID: 1242122168}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1812025440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812025431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa1187ac0e5335d479bdfd45a5e00b99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ability: {fileID: 11400000, guid: a53aebd75fa584748a9d6c6053892ca1, type: 2}
+  key: 49
 --- !u!4 &1817200838 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4329659213587118756, guid: 9708b9c3ebbbd4c4da603842913ee7c0, type: 3}
@@ -32502,11 +32516,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4012632125744235464, guid: 4799b3b8d48f78048b26e32e2503c36b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -20.33
+      value: -26.83
       objectReference: {fileID: 0}
     - target: {fileID: 4012632125744235464, guid: 4799b3b8d48f78048b26e32e2503c36b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.37
+      value: -11.15
       objectReference: {fileID: 0}
     - target: {fileID: 4012632125744235464, guid: 4799b3b8d48f78048b26e32e2503c36b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -32542,6 +32556,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4012632125744235470, guid: 4799b3b8d48f78048b26e32e2503c36b, type: 3}
       propertyPath: m_Name
+      value: Buff Ability
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012632125744235470, guid: 4799b3b8d48f78048b26e32e2503c36b, type: 3}
+      propertyPath: m_TagString
       value: Buff Ability
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -32683,17 +32701,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Heal Ability
       objectReference: {fileID: 0}
+    - target: {fileID: 4980084016343437137, guid: 19a19950b75b43b4a884ae17995bd890, type: 3}
+      propertyPath: m_TagString
+      value: Heal Ability
+      objectReference: {fileID: 0}
     - target: {fileID: 4980084016343437143, guid: 19a19950b75b43b4a884ae17995bd890, type: 3}
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4980084016343437143, guid: 19a19950b75b43b4a884ae17995bd890, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -21.79
+      value: -29.14
       objectReference: {fileID: 0}
     - target: {fileID: 4980084016343437143, guid: 19a19950b75b43b4a884ae17995bd890, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.44
+      value: -11.21
       objectReference: {fileID: 0}
     - target: {fileID: 4980084016343437143, guid: 19a19950b75b43b4a884ae17995bd890, type: 3}
       propertyPath: m_LocalPosition.z
