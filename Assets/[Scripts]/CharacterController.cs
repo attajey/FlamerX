@@ -226,6 +226,17 @@ public class CharacterController : MonoBehaviour
         return Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
     }
 
+    public int getAttackDamage()
+    {
+        return attackDamage;
+    }
+
+    public void setAttackDamage(int newAttackDamage)
+    {
+        attackDamage = newAttackDamage;
+        Debug.Log(attackDamage);
+    }
+
     private void Flip()
     {
         Vector3 temp = transform.localScale;
