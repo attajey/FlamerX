@@ -16,4 +16,10 @@ public class HealAbility : Ability
         characterController.hasHealAbility = true;
         OnHealAbilityCollected?.Invoke();
     }
+
+    public override void BeginCooldown(GameObject parent)
+    {
+        CharacterController characterController = parent.GetComponent<CharacterController>();
+        characterController.hasHealAbility = false;
+    }
 }

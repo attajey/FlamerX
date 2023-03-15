@@ -18,4 +18,12 @@ public class BuffAbility : Ability
 
         OnAbilityCollected?.Invoke();
     }
+
+    public override void BeginCooldown(GameObject parent) 
+    {
+        CharacterController characterController = parent.GetComponent<CharacterController>();
+        int defaultAttackDamage = characterController.getAttackDamage() - buffStrength;
+        Debug.Log(defaultAttackDamage);
+        characterController.setAttackDamage(defaultAttackDamage);
+    }
 }

@@ -56,6 +56,7 @@ public class EnemyController : MonoBehaviour
         rbody = this.GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
         if ( bullet != null ) bullet.layer = 11;
+        player = GameObject.FindGameObjectWithTag("Player");
 
 
     }

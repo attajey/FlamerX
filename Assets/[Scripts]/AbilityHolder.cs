@@ -76,6 +76,7 @@ public class AbilityHolder : MonoBehaviour
                 }
                 else
                 {
+                    buffAbility.BeginCooldown(gameObject);
                     buffState = BuffAbilityState.cooldown;
                     buffCooldownTime = buffAbility.cooldownTime;
                 }
@@ -114,6 +115,8 @@ public class AbilityHolder : MonoBehaviour
                 }
                 else
                 {
+                    healAbility.BeginCooldown(gameObject);
+
                     healState = HealAbilityState.cooldown;
                     healCooldownTime = healAbility.cooldownTime;
                 }
