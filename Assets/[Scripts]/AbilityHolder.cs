@@ -18,6 +18,16 @@ public class AbilityHolder : MonoBehaviour
 
     public KeyCode key;
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Buff Ability"))
+        {
+            ability.Activate(gameObject);
+            Destroy(collision.gameObject);
+        }
+    }
+
+
     void Update()
     {
         switch (state)

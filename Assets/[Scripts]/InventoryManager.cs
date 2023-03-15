@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private AudioClip[] coinSFX;
     [SerializeField] private AudioClip fuelSFX;
     [SerializeField] private AudioClip potionSFX;
+    [SerializeField] private AudioClip abilitySFX;
     private AudioSource audioSource;
     private void Start()
     {
@@ -16,8 +18,15 @@ public class InventoryManager : MonoBehaviour
         Coin.OnCoinCollected += PlayRandomCoinSFX;
         Fuel.OnFuelCollected += PlayFuelSFX;
         Potion.OnPotionCollected += PlayPotionSFX;
+        BuffAbility.OnAbilityCollected += PlayAbilitySFX;
 
 
+    }
+
+    private void PlayAbilitySFX()
+    {
+        audioSource.clip = abilitySFX;
+        audioSource.Play();
     }
 
     //private void OnTriggerEnter2D(Collider2D collision)

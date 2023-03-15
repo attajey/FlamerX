@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ using UnityEngine;
 public class BuffAbility : Ability
 {
     public int buffStrength;
+    public static event Action OnAbilityCollected;
 
     public override void Activate(GameObject parent)
     {
@@ -13,5 +15,7 @@ public class BuffAbility : Ability
         int newAttackDamage = characterController.getAttackDamage() + buffStrength;
         Debug.Log(newAttackDamage);
         characterController.setAttackDamage(newAttackDamage);
+
+        OnAbilityCollected?.Invoke();
     }
 }
