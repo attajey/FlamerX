@@ -923,21 +923,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Heal Ability
       objectReference: {fileID: 0}
-    - target: {fileID: 4980084016343437137, guid: 19a19950b75b43b4a884ae17995bd890, type: 3}
-      propertyPath: m_TagString
-      value: Heal Ability
-      objectReference: {fileID: 0}
     - target: {fileID: 4980084016343437143, guid: 19a19950b75b43b4a884ae17995bd890, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4980084016343437143, guid: 19a19950b75b43b4a884ae17995bd890, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.4646597
+      value: -17.38
       objectReference: {fileID: 0}
     - target: {fileID: 4980084016343437143, guid: 19a19950b75b43b4a884ae17995bd890, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.4821391
+      value: 6.36
       objectReference: {fileID: 0}
     - target: {fileID: 4980084016343437143, guid: 19a19950b75b43b4a884ae17995bd890, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1101,14 +1097,6 @@ PrefabInstance:
     - target: {fileID: 4012632125744235470, guid: 4799b3b8d48f78048b26e32e2503c36b, type: 3}
       propertyPath: m_Name
       value: Buff Ability
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012632125744235470, guid: 4799b3b8d48f78048b26e32e2503c36b, type: 3}
-      propertyPath: m_TagString
-      value: Buff Ability
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012632125744235471, guid: 4799b3b8d48f78048b26e32e2503c36b, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4799b3b8d48f78048b26e32e2503c36b, type: 3}
@@ -8461,37 +8449,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 624414031748080125, guid: 578cc2d12011c374f89876d2b67c6ddd, type: 3}
   m_PrefabInstance: {fileID: 1044661684}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1060895835 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4012632125744235470, guid: 4799b3b8d48f78048b26e32e2503c36b, type: 3}
-  m_PrefabInstance: {fileID: 460303500}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &1060895839
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1060895835}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.56, y: 2.56}
-    newSize: {x: 2.56, y: 2.56}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.56, y: 2.56}
-  m_EdgeRadius: 0
 --- !u!1001 &1107172416
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30012,6 +29969,14 @@ PrefabInstance:
       propertyPath: abilitySFX
       value: 
       objectReference: {fileID: 8300000, guid: 7bef581e0d51372429b7fbdbfb2b922b, type: 3}
+    - target: {fileID: 1812025439, guid: fe94474a32dee5c49a757da0451ac03f, type: 3}
+      propertyPath: buffAbilitySFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 7bef581e0d51372429b7fbdbfb2b922b, type: 3}
+    - target: {fileID: 1812025439, guid: fe94474a32dee5c49a757da0451ac03f, type: 3}
+      propertyPath: healAbilitySFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 34d038e6b672a2d4e9ec181a07577462, type: 3}
     - target: {fileID: 7606465271275255590, guid: fe94474a32dee5c49a757da0451ac03f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.62
@@ -31542,8 +31507,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1187ac0e5335d479bdfd45a5e00b99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ability: {fileID: 11400000, guid: a53aebd75fa584748a9d6c6053892ca1, type: 2}
-  key: 49
+  buffAbility: {fileID: 11400000, guid: a53aebd75fa584748a9d6c6053892ca1, type: 2}
+  healAbility: {fileID: 0}
 --- !u!4 &1817200838 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4329659213587118756, guid: 9708b9c3ebbbd4c4da603842913ee7c0, type: 3}

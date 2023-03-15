@@ -10,7 +10,8 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private AudioClip[] coinSFX;
     [SerializeField] private AudioClip fuelSFX;
     [SerializeField] private AudioClip potionSFX;
-    [SerializeField] private AudioClip abilitySFX;
+    [SerializeField] private AudioClip buffAbilitySFX;
+    [SerializeField] private AudioClip healAbilitySFX;
     private AudioSource audioSource;
     private void Start()
     {
@@ -18,14 +19,21 @@ public class InventoryManager : MonoBehaviour
         Coin.OnCoinCollected += PlayRandomCoinSFX;
         Fuel.OnFuelCollected += PlayFuelSFX;
         Potion.OnPotionCollected += PlayPotionSFX;
-        BuffAbility.OnAbilityCollected += PlayAbilitySFX;
+        BuffAbility.OnAbilityCollected += PlayBuffAbilitySFX;
+        HealAbility.OnHealAbilityCollected += PlayHealAbilitySFX;
 
 
     }
 
-    private void PlayAbilitySFX()
+    private void PlayBuffAbilitySFX()
     {
-        audioSource.clip = abilitySFX;
+        audioSource.clip = buffAbilitySFX;
+        audioSource.Play();
+    }
+
+    private void PlayHealAbilitySFX()
+    {
+        audioSource.clip = healAbilitySFX;
         audioSource.Play();
     }
 

@@ -4,61 +4,90 @@ using UnityEngine;
 
 public class AbilityHolder : MonoBehaviour
 {
-    public Ability ability;
-    float cooldownTime;
-    float activeTime;
+    public Ability buffAbility;
+    public Ability healAbility;
+    float buffCooldownTime;
+    float buffActiveTime;
 
-    enum AbilityState
+    float healCooldownTime;
+    float healActiveTime;
+
+    enum BuffAbilityState
     {
         ready,
         active,
         cooldown
     }
-    AbilityState state = AbilityState.ready;
 
-    public KeyCode key;
+    enum HealAbilityState
+    {
+        ready,
+        active,
+        cooldown
+    }
+
+    BuffAbilityState buffState = BuffAbilityState.ready;
+    HealAbilityState healState = HealAbilityState.ready;
+
+
+    //public KeyCode key;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Buff Ability"))
         {
-            ability.Activate(gameObject);
-            Destroy(collision.gameObject);
+            if (buffState == BuffAbilityState.ready)
+            {
+                buffAbility.Activate(gameObject);
+                buffState = BuffAbilityState.active;
+                buffActiveTime = buffAbility.activeTime;
+                Destroy(collision.gameObject);
+            }
+        }
+        if (collision.CompareTag("Heal Ability"))
+        {
+            if (healState == HealAbilityState.ready)
+            {
+                healAbility.Activate(gameObject);
+                healState = HealAbilityState.active;
+                healActiveTime = healAbility.activeTime;
+                Destroy(collision.gameObject);
+            }
         }
     }
 
 
     void Update()
     {
-        switch (state)
+        switch (buffState)
         {
-            case AbilityState.ready:
-                if (Input.GetKeyDown(key))
-                {
-                    ability.Activate(gameObject);
-                    state = AbilityState.active;
-                    activeTime = ability.activeTime;
-                }
+            case BuffAbilityState.ready:
+                //if (Input.GetKeyDown(key))
+                //{
+                //    buffAbility.Activate(gameObject);
+                //    state = AbilityState.active;
+                //    activeTime = buffAbility.activeTime;
+                //}
                 break;
-            case AbilityState.active:
-                if (activeTime > 0)
+            case BuffAbilityState.active:
+                if (buffActiveTime > 0)
                 {
-                    activeTime -= Time.deltaTime;
+                    buffActiveTime -= Time.deltaTime;
                 }
                 else
                 {
-                    state = AbilityState.cooldown;
-                    cooldownTime = ability.cooldownTime;
+                    buffState = BuffAbilityState.cooldown;
+                    buffCooldownTime = buffAbility.cooldownTime;
                 }
                 break;
-            case AbilityState.cooldown:
-                if (cooldownTime > 0)
+            case BuffAbilityState.cooldown:
+                if (buffCooldownTime > 0)
                 {
-                    cooldownTime -= Time.deltaTime;
+                    buffCooldownTime -= Time.deltaTime;
                 }
                 else
                 {
-                    state = AbilityState.ready;
+                    buffState = BuffAbilityState.ready;
                 }
                 break;
 
@@ -66,5 +95,45 @@ public class AbilityHolder : MonoBehaviour
                 Debug.LogError("Ability State Not Found!");
                 break;
         }
+
+
+        switch (healState)
+        {
+            case HealAbilityState.ready:
+                //if (Input.GetKeyDown(key))
+                //{
+                //    buffAbility.Activate(gameObject);
+                //    state = AbilityState.active;
+                //    activeTime = buffAbility.activeTime;
+                //}
+                break;
+            case HealAbilityState.active:
+                if (healActiveTime > 0)
+                {
+                    healActiveTime -= Time.deltaTime;
+                }
+                else
+                {
+                    healState = HealAbilityState.cooldown;
+                    healCooldownTime = healAbility.cooldownTime;
+                }
+                break;
+            case HealAbilityState.cooldown:
+                if (healCooldownTime > 0)
+                {
+                    healCooldownTime -= Time.deltaTime;
+                }
+                else
+                {
+                    healState = HealAbilityState.ready;
+                }
+                break;
+
+            default:
+                Debug.LogError("Ability State Not Found!");
+                break;
+        }
+
+
     }
 }

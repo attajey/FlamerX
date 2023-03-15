@@ -52,6 +52,7 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private int maxHealth = 100;
     private int currentHealth;
     public HealthBar healthbar;
+    public bool hasHealAbility = false;
 
     [SerializeField] private int maxWater = 100;
     private int currentWater;
@@ -61,15 +62,16 @@ public class CharacterController : MonoBehaviour
 
     private void Awake()
     {
+        hasHealAbility = false;
         anim = GetComponent<Animator>();
         rBody = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
 
         currentHealth = maxHealth;
-        if ( healthbar != null ) healthbar.SetMaxHealth(maxHealth);
+        if (healthbar != null) healthbar.SetMaxHealth(maxHealth);
 
         currentWater = maxWater;
-        if ( waterbar != null ) waterbar.SetMaxWater(maxWater);
+        if (waterbar != null) waterbar.SetMaxWater(maxWater);
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -155,8 +157,11 @@ public class CharacterController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
-        healthbar.SetHealth(currentHealth);
+        if (!hasHealAbility)
+        {
+            currentHealth -= damage;
+            healthbar.SetHealth(currentHealth);
+        }
 
         // Play hurt anim
         //anim.SetTrigger("Hurt");
@@ -179,7 +184,7 @@ public class CharacterController : MonoBehaviour
         {
             currentHealth = 100;
         }
-            healthbar.SetHealth(currentHealth);
+        healthbar.SetHealth(currentHealth);
     }
 
     public void DecreaseThirst()
@@ -193,7 +198,7 @@ public class CharacterController : MonoBehaviour
         {
             currentWater = 100;
         }
-            waterbar.SetWater(currentWater);
+        waterbar.SetWater(currentWater);
     }
 
     public void IncreaseThirst()
