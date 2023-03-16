@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1812025438}
   - component: {fileID: 1812025439}
   - component: {fileID: 1812025432}
+  - component: {fileID: 1812025440}
   m_Layer: 8
   m_Name: Pixel_Flamer_X
   m_TagString: Player
@@ -207,6 +208,7 @@ MonoBehaviour:
   attackSFX: {fileID: 8300000, guid: 3835ac7ea641e9e4b8ba4afd8fcb2bcb, type: 3}
   maxHealth: 100
   healthbar: {fileID: 0}
+  hasHealAbility: 0
   maxWater: 100
   waterbar: {fileID: 0}
 --- !u!114 &1812025438
@@ -248,6 +250,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 25fb87b135a3e8b4388d2c084eb69c7e, type: 3}
   fuelSFX: {fileID: 8300000, guid: 268e4d53b93141646b645aa3acafabb7, type: 3}
   potionSFX: {fileID: 8300000, guid: 169112e43cf0d83418c11fcefafa3de1, type: 3}
+  buffAbilitySFX: {fileID: 8300000, guid: 342d45b4ad84c6049aa8c03a88a82641, type: 3}
+  healAbilitySFX: {fileID: 8300000, guid: 34d038e6b672a2d4e9ec181a07577462, type: 3}
 --- !u!82 &1812025432
 AudioSource:
   m_ObjectHideFlags: 0
@@ -344,6 +348,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1812025440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa1187ac0e5335d479bdfd45a5e00b99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buffAbility: {fileID: 11400000, guid: a53aebd75fa584748a9d6c6053892ca1, type: 2}
+  healAbility: {fileID: 11400000, guid: 275f9a5c914698b4f8325b99464cb636, type: 2}
 --- !u!1 &1342264338
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,7 +417,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1223890479574280606}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.445, y: -0.118, z: 0}
+  m_LocalPosition: {x: 0.62, y: -0.118, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

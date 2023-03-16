@@ -13,7 +13,7 @@ public class BuffAbility : Ability
     {
         CharacterController characterController = parent.GetComponent<CharacterController>();
         int newAttackDamage = characterController.getAttackDamage() + buffStrength;
-        Debug.Log(newAttackDamage);
+        Debug.Log("New Attack Damage: " + newAttackDamage);
         characterController.setAttackDamage(newAttackDamage);
 
         OnAbilityCollected?.Invoke();
@@ -23,7 +23,8 @@ public class BuffAbility : Ability
     {
         CharacterController characterController = parent.GetComponent<CharacterController>();
         int defaultAttackDamage = characterController.getAttackDamage() - buffStrength;
-        Debug.Log(defaultAttackDamage);
+        Debug.Log("Default Attack Damage: " + defaultAttackDamage);
         characterController.setAttackDamage(defaultAttackDamage);
+        OnAbilityCollected?.Invoke();
     }
 }

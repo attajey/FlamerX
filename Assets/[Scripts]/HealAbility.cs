@@ -21,5 +21,6 @@ public class HealAbility : Ability
     {
         CharacterController characterController = parent.GetComponent<CharacterController>();
         characterController.hasHealAbility = false;
+        OnHealAbilityCollected?.Invoke();
     }
 }

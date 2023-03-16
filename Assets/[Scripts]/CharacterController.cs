@@ -239,7 +239,7 @@ public class CharacterController : MonoBehaviour
     public void setAttackDamage(int newAttackDamage)
     {
         attackDamage = newAttackDamage;
-        Debug.Log(attackDamage);
+        //Debug.Log("Attack Damage : " + attackDamage);
     }
 
     private void Flip()
