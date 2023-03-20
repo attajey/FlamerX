@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Heal
   cooldownTime: 2
-  activeTime: 5
+  activeTime: 10

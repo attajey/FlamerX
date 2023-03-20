@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AbilityHolder : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class AbilityHolder : MonoBehaviour
 
     float healCooldownTime;
     float healActiveTime;
+
+
 
     enum BuffAbilityState
     {
@@ -41,6 +44,7 @@ public class AbilityHolder : MonoBehaviour
                 buffAbility.Activate(gameObject);
                 buffState = BuffAbilityState.active;
                 buffActiveTime = buffAbility.activeTime;
+
                 Destroy(collision.gameObject);
             }
         }
@@ -139,4 +143,5 @@ public class AbilityHolder : MonoBehaviour
 
 
     }
+
 }
