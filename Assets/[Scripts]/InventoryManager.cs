@@ -19,7 +19,7 @@ public class InventoryManager : MonoBehaviour
         Coin.OnCoinCollected += PlayRandomCoinSFX;
         Fuel.OnFuelCollected += PlayFuelSFX;
         Potion.OnPotionCollected += PlayPotionSFX;
-        BuffAbility.OnAbilityCollected += PlayBuffAbilitySFX;
+        BuffAbility.OnBuffAbilityCollected += PlayBuffAbilitySFX;
         HealAbility.OnHealAbilityCollected += PlayHealAbilitySFX;
 
 

@@ -23,4 +23,5 @@ public class HealAbility : Ability
         characterController.hasHealAbility = false;
         OnHealAbilityCollected?.Invoke();
     }
+
 }

@@ -7,7 +7,7 @@ using UnityEngine;
 public class BuffAbility : Ability
 {
     public int buffStrength;
-    public static event Action OnAbilityCollected;
+    public static event Action OnBuffAbilityCollected;
 
     public override void Activate(GameObject parent)
     {
@@ -16,7 +16,7 @@ public class BuffAbility : Ability
         Debug.Log("New Attack Damage: " + newAttackDamage);
         characterController.setAttackDamage(newAttackDamage);
 
-        OnAbilityCollected?.Invoke();
+        OnBuffAbilityCollected?.Invoke();
     }
 
     public override void BeginCooldown(GameObject parent) 
@@ -25,6 +25,7 @@ public class BuffAbility : Ability
         int defaultAttackDamage = characterController.getAttackDamage() - buffStrength;
         Debug.Log("Default Attack Damage: " + defaultAttackDamage);
         characterController.setAttackDamage(defaultAttackDamage);
-        OnAbilityCollected?.Invoke();
+        OnBuffAbilityCollected?.Invoke();
     }
+
 }
