@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 23537430768385366}
   - component: {fileID: 5543294497590018528}
   - component: {fileID: 5543294497590018529}
+  - component: {fileID: 5543294496691006829}
   m_Layer: 0
   m_Name: Agent 008
   m_TagString: Untagged
@@ -152,3 +153,105 @@ MonoBehaviour:
     - I'm here to guide you through your dangerous adventures in these caves,
     - And tell you that this is not gonna be fun!
     - Good luck soldier. See you along the journey...
+  sfx:
+  - {fileID: 8300000, guid: f1dfada458599dd4aad49d070ace85ad, type: 3}
+  - {fileID: 8300000, guid: b0c0ad303c05f3f4bab51dc544b50607, type: 3}
+  - {fileID: 8300000, guid: 39d3fca34b8397a4b8c8c81295b3680f, type: 3}
+  - {fileID: 8300000, guid: b28e7c9d9b7f7904ca74e5a3a2488db1, type: 3}
+  - {fileID: 8300000, guid: e00206e8bfbe6b241b51e5a808c20e1c, type: 3}
+--- !u!82 &5543294496691006829
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23537430768385365}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -1702155580071409835, guid: 3eb4601f5a8c886489dc0108d69377b9, type: 2}
+  m_audioClip: {fileID: 8300000, guid: e72b066f90d98764abaa7c2b39ab578e, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
