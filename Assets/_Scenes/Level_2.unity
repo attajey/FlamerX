@@ -36192,6 +36192,10 @@ PrefabInstance:
       propertyPath: healthbar
       value: 
       objectReference: {fileID: 26860426}
+    - target: {fileID: 4969239563068462168, guid: fe94474a32dee5c49a757da0451ac03f, type: 3}
+      propertyPath: m_Name
+      value: MinimapCamera
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe94474a32dee5c49a757da0451ac03f, type: 3}
 --- !u!1001 &1243785237
