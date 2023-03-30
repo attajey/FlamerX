@@ -9393,6 +9393,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Agent 008 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5543294496691006829, guid: f20cf248d3613b443b90570cd6bac6b1, type: 3}
+      propertyPath: Priority
+      value: 250
+      objectReference: {fileID: 0}
     - target: {fileID: 5543294497590018529, guid: f20cf248d3613b443b90570cd6bac6b1, type: 3}
       propertyPath: dialogue.sentences.Array.size
       value: 5
@@ -39077,6 +39081,10 @@ PrefabInstance:
     - target: {fileID: 23537430768385365, guid: f20cf248d3613b443b90570cd6bac6b1, type: 3}
       propertyPath: m_Name
       value: Agent 008
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543294496691006829, guid: f20cf248d3613b443b90570cd6bac6b1, type: 3}
+      propertyPath: Priority
+      value: 250
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f20cf248d3613b443b90570cd6bac6b1, type: 3}
