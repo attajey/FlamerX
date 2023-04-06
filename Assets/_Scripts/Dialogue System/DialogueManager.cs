@@ -13,7 +13,7 @@ public class DialogueManager : MonoBehaviour {
 	public float typeSpeed = 0.025f;
 
 
-    private Queue<string> sentences;
+    [SerializeField] public Queue<string> sentences;
 
 	// Use this for initialization
 	void Start () {
