@@ -59,4 +59,14 @@ public class SceneMenuManager : MonoBehaviour
 #endif
     }
 
+    public void ToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void ToCredits()
+    {
+        SceneManager.LoadScene("CreditsScene");
+    }
+
 }
