@@ -11,6 +11,7 @@ public class ScoreText : MonoBehaviour
     void Start()
     {
         scoreText = GetComponent<Text>();
+        scoreText.text = $"Score: {GlobalVariables.totalScore}";
     }
 
     private void OnEnable()

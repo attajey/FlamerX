@@ -10,6 +10,7 @@ public class FuelText : MonoBehaviour
     void Start()
     {
         fuelText = GetComponent<Text>();
+        fuelText.text = $"Fuel: {fuelCount}";
 
     }
 
