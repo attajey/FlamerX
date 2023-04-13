@@ -11,6 +11,7 @@ public class CoinText : MonoBehaviour
     void Start()
     {
         cointText = GetComponent<Text>();
+        cointText.text = $"Coins: {coinCount}";
     }
     private void OnEnable()
     {

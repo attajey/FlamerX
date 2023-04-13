@@ -25,6 +25,7 @@ public class Boss : EnemyController
     }
 
     private void OnDestroy() {
+        GlobalVariables.totalScore += 10000;
         if ( player.transform.position.x >= -3 ) { player.transform.position = new Vector3( 1f , -5.8f , 0f ); }
         else player.transform.position = new Vector3( -7f , -5.8f , 0f );
         foreach ( GameObject go in spawns ) go.SetActive(false);
