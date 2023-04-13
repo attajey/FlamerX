@@ -18,7 +18,7 @@ public class EnemyController : MonoBehaviour
     //[SerializeField] private float rangeToChase = 5f;
     [SerializeField] private float rangeToAttack = 5f;
     [SerializeField] private Animator anim;
-    [SerializeField] private GameObject player;
+    [SerializeField] protected GameObject player;
 
     [Header("Attack")]
     [SerializeField] private Transform attackPoint;
@@ -129,7 +129,6 @@ public class EnemyController : MonoBehaviour
         if (gameObject.name.Equals("Flying eye Model"))
         {
             Instantiate(bullet, new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z), Quaternion.Euler(0f, 0f, -90f), transform);
-
         }
         anim.SetTrigger(isAttacking);
 
@@ -177,7 +176,8 @@ public class EnemyController : MonoBehaviour
     {
         if (isNotDeadYet)
         {
-
+            StopAllCoroutines();
+            GetComponent<Collider2D>().enabled = false;
             // Play die anim
             anim.SetTrigger(isDead);
             //ScoreText.scoreValue += 100;
@@ -186,7 +186,7 @@ public class EnemyController : MonoBehaviour
             GlobalVariables.totalScore += 500;
 
             // Disable the enemy
-            Destroy(this.gameObject, 2f);
+            Destroy(transform.parent.gameObject, 2f);
         }
     }
 
