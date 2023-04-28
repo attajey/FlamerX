@@ -9,7 +9,7 @@
 
 using UnityEngine;
 using System.IO;
-using Newtonsoft.Json;
+using Unity.Plastic.Newtonsoft.Json;
 
 /// <summary>
 /// class <c>SaveManager</c> saves and loads the player data
