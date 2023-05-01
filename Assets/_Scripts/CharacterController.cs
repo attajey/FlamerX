@@ -13,6 +13,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class CharacterController : MonoBehaviour
@@ -121,9 +122,32 @@ public class CharacterController : MonoBehaviour
             Flip();
         }
 
+        // Resets the anim speed due to OnJumpANimationEnd method
+        if (IsGrounded())
+        {
+            anim.speed = 1f;
+        }
+
         anim.SetFloat("xVelocity", Mathf.Abs(rBody.velocity.x));
         anim.SetFloat("yVelocity", rBody.velocity.y);
         anim.SetBool("isGrounded", IsGrounded());
+
+    }
+
+    public void OnJumpAnimationEnd()
+    {
+        if (!IsGrounded())
+        {
+            anim.speed = 0f;
+            //anim.Play("Pixel_Flamer_X_Idle");
+            
+        }
+        //else if (IsGrounded())
+        //{
+        //    anim.speed = 1f;
+        //    anim.Play("Pixel_Flamer_X_Idle");
+        //}
+
     }
 
     private void Attack()

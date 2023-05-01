@@ -181,9 +181,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 14
-        y: 0
+        y: 12
         width: 110
-        height: 64
+        height: 52
       alignment: 9
       pivot: {x: 0.1, y: 0.58}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,9 +202,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 142
-        y: 0
+        y: 12
         width: 110
-        height: 64
+        height: 52
       alignment: 9
       pivot: {x: 0.1, y: 0.58}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,9 +223,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 270
-        y: 0
+        y: 12
         width: 110
-        height: 64
+        height: 52
       alignment: 9
       pivot: {x: 0.1, y: 0.58}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,9 +244,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 398
-        y: 0
+        y: 12
         width: 110
-        height: 64
+        height: 52
       alignment: 9
       pivot: {x: 0.1, y: 0.58}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,9 +265,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 526
-        y: 0
+        y: 12
         width: 110
-        height: 64
+        height: 52
       alignment: 9
       pivot: {x: 0.1, y: 0.58}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -286,9 +286,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 654
-        y: 0
+        y: 12
         width: 110
-        height: 64
+        height: 52
       alignment: 9
       pivot: {x: 0.1, y: 0.58}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -307,9 +307,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 782
-        y: 0
+        y: 12
         width: 110
-        height: 64
+        height: 52
       alignment: 9
       pivot: {x: 0.1, y: 0.58}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -328,9 +328,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 910
-        y: 0
+        y: 12
         width: 110
-        height: 64
+        height: 52
       alignment: 9
       pivot: {x: 0.1, y: 0.58}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -349,9 +349,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1037
-        y: 0
+        y: 14
         width: 110
-        height: 64
+        height: 50
       alignment: 9
       pivot: {x: 0.1, y: 0.58}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -370,9 +370,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1166
-        y: 0
+        y: 12
         width: 110
-        height: 64
+        height: 52
       alignment: 9
       pivot: {x: 0.1, y: 0.58}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -391,9 +391,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1294
-        y: 0
+        y: 12
         width: 110
-        height: 64
+        height: 52
       alignment: 9
       pivot: {x: 0.1, y: 0.58}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -412,9 +412,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1422
-        y: 0
+        y: 12
         width: 110
-        height: 64
+        height: 52
       alignment: 9
       pivot: {x: 0.1, y: 0.58}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -439,18 +439,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Pixel_Flamer_Attack_7: 21300014
+      Pixel_Flamer_Attack_0: 21300000
+      Pixel_Flamer_Attack_1: 21300002
+      Pixel_Flamer_Attack_10: 21300020
+      Pixel_Flamer_Attack_11: 21300022
       Pixel_Flamer_Attack_2: 21300004
+      Pixel_Flamer_Attack_3: 21300006
+      Pixel_Flamer_Attack_4: 21300008
       Pixel_Flamer_Attack_5: 21300010
       Pixel_Flamer_Attack_6: 21300012
-      Pixel_Flamer_Attack_4: 21300008
-      Pixel_Flamer_Attack_9: 21300018
-      Pixel_Flamer_Attack_11: 21300022
-      Pixel_Flamer_Attack_10: 21300020
+      Pixel_Flamer_Attack_7: 21300014
       Pixel_Flamer_Attack_8: 21300016
-      Pixel_Flamer_Attack_1: 21300002
-      Pixel_Flamer_Attack_0: 21300000
-      Pixel_Flamer_Attack_3: 21300006
+      Pixel_Flamer_Attack_9: 21300018
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
