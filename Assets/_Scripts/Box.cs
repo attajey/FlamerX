@@ -5,6 +5,7 @@
  *  Revision History:   November 26, 2022 (Juan Munoz Rivera): Initial script.
  */
 
+using System.Collections;
 using UnityEngine;
 
 /// <summary>
@@ -15,6 +16,15 @@ public class Box : MonoBehaviour
 {
     public void DestroySelf()
     {
+       StartCoroutine(DelayInDestruction());
+    }
+
+    IEnumerator DelayInDestruction()
+    {
+        // To make a delay when destorying boxes, because of 0.5 secs of animation duration
+        yield return new WaitForSeconds(0.5f);
         Destroy(this.gameObject);
     }
+
+
 }
